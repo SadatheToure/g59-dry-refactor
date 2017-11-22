@@ -5,6 +5,11 @@ const supertest = require('supertest')
 
 let bookId = 1
 
+test.before('guaranteed cleanup', t => {
+  return knex('books')
+    .del()
+})
+
 test.after.always('guaranteed cleanup', t => {
   return knex('books')
     .del()
