@@ -112,9 +112,5 @@ router.delete('/:id', (req, res, next) => {
     })
 })
 
-test.before('guaranteed cleanup', t => {
-  return knex('books')
-    .del()
-})
 
 module.exports = router
